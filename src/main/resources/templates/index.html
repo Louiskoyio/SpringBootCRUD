@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>AstroPremierLeague</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+
+</head>
+<body>
+<div class="container-fluid text-left col-sm-12" style="max-width: 800px; ">
+
+    <h1><i class="bi bi-trophy-fill"></i> Welcome to Astro Premier League</h1>
+
+
+    <div class="main-menu">
+        <div class="main-menu-item"><a href="/teams/new"><i class="bi bi-plus-square-fill"></i> Register Team</a></div>
+        <div class="main-menu-item"><a href="/players/new"><i class="bi bi-file-person-fill"></i> Register Player</a></div>
+        <div class="main-menu-item"><a href="players"><i class="bi bi-people"></i> View Players</a></div>
+        <div class="main-menu-item"><a href="teams"><i class="bi bi-people-fill"></i> View Teams</a></div>
+        <div class="main-menu-item"><a href="fixtures"><i class="bi bi-calendar-event-fill"></i> View Fixtures & Results</a>
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+<style>
+    .main-menu {
+        flex-direction: column;
+    }
+
+    .main-menu-item {
+        border-radius: 25px;
+        margin: 12px;
+        transition: all .2s ease-in-out;
+        text-align: center;
+        font-size: large;
+        text-decoration: none;
+        padding: 24px;
+        background-color: black;
+        color: white;
+        max-width: 800px;
+    }
+
+    .main-menu-item:hover {
+        background-color: white;
+        color: darkgray;
+    }
+
+    a {
+        color: darkgray;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: black;
+        transform: scale(1.1);
+    }
+</style>
+</html>

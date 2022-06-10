@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>APL | Register Player</title>
+</head>
+<body>
+<div class="container-fluid text-left col-sm-12" style="max-width: 800px;">
+    <div class="custom-nav">
+        <a class="badge bg-secondary" style="text-decoration: none;" th:href="@{/}"><i class="bi bi-house-fill"></i>
+            Home</a>
+        <a class="badge bg-secondary" style="text-decoration: none;" th:href="@{/teams}"><i
+                class="bi bi-people-fill"></i> Teams</a>
+        <a class="badge bg-warning activeTab" style="text-decoration: none;" th:href="@{/players}"><i
+                class="bi bi-people"></i> Players</a>
+        <a class="badge bg-secondary" style="text-decoration: none;" th:href="@{/fixtures}"><i
+                class="bi bi-calendar-event-fill"></i> Fixtures & Results</a>
+        <a class="badge bg-secondary" href="" style="text-decoration: none;"><i class="bi bi-file-bar-graph-fill"></i>
+            Statistics</a>
+    </div>
+
+    <div>
+        <h4> [[${pageTitle}]]</h4>
+        <a style="color: black;text-decoration: none; margin-bottom: 12px;" th:href="@{/players}"><i
+                class="bi bi-arrow-left"></i> Back to Players </a>
+    </div>
+
+    <div class="card text-left" style="box-shadow: 5px 10px 8px #888888;">
+        <div class="card-body" th:object="${player}">
+            <form method="post" th:action="@{/players/save}" th:object="${player}">
+                <input th:field="*{id}" type="hidden">
+                <div class="form-group row">
+                    <div class="form-group col-md-6">
+                        <label for="fname">First Name</label>
+                        <input class="form-control" id="fname" placeholder="First Name" th:field="*{fname}" type="text">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname">Last Name</label>
+                        <input class="form-control" id="lname" placeholder="Last Name" th:field="*{lname}" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="team">Team</label>
+                    <select class="form-control" id="team" th:field="*{teamId}">
+                        <option value="1">Mangunga FC</option>
+                        <option value="2">Pau FC</option>
+                        <option value="3">YB FC</option>
+                        <option value="4">Bayer Neverlosen</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input class="form-control" id="phone" placeholder="Phone Number" th:field="*{phoneNumber}"
+                           type="number">
+                </div>
+                <div class="form-group">
+                    <label for="nationalID">National ID</label>
+                    <input class="form-control" id="nationalID" placeholder="National ID" th:field="*{nationalId}"
+                           type="number">
+                </div>
+                <div class="form-group row">
+                    <div class="form-group col-md-6">
+                        <label for="password">Password</label>
+                        <input class="form-control" id="password" placeholder="Password" th:field="*{password}"
+                               type="password">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="passwordConfirm">Confirm Password</label>
+                        <input class="form-control" id="passwordConfirm" placeholder="Password" type="password">
+                    </div>
+                </div>
+                <div style="float: right;">
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-journal-check"></i> Register Player
+                    </button>
+                    <button class="btn btn-secondary m-2" onclick="cancelForm()"><i class="bi bi-journal-x"></i> Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="application/javascript">
+    function cancelForm() {
+        window.location = "[[@{/players}]]"
+    }
+</script>
+</body>
+<style>
+    .custom-nav {
+        flex-direction: row-reverse;
+    }
+
+    a{
+        color: white;
+        transition: all .2s ease-in-out;
+    }
+
+    a:hover {
+        color: #f6c40a;
+        transform: scale(1.1);
+    }
+    .activeTab {
+        color: black;
+        transition: all .2s ease-in-out;
+    }
+
+    .activeTab:hover {
+        color: white;
+        background: black;
+    }
+
+
+</style>
+</html>

@@ -1,18 +1,16 @@
-# java-getting-started
+# Spring Framework CRUD Application
 
-A barebones Java app, which can easily be deployed to Heroku.
+A demo app that uses the Spring MVC Framework to demonstrate a basic CRUD application. The application allows user to register a team, register players into the various teams,edit and delete player and team data and check fixtures and results among other functionalities.
 
-This application supports the [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java) article - check it out.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
+Deployed site link: https://koyiolouis-crud.herokuapp.com/
 ## Running Locally
 
 Make sure you have Java and Maven installed.  Also, install the [Heroku CLI](https://cli.heroku.com/).
 
 ```sh
-$ git clone https://github.com/heroku/java-getting-started.git
-$ cd java-getting-started
+$ git clone https://github.com/Louiskoyio/SpringBootCRUD.git
+$ cd SpringBootCRUD
 $ mvn install
 $ heroku local:start
 ```
@@ -25,16 +23,12 @@ If you're going to use a database, ensure you have a local `.env` file that read
 JDBC_DATABASE_URL=jdbc:postgresql://localhost:5432/java_database_name
 ```
 
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku main
-$ heroku open
-```
 
 ## Documentation
 
-For more information about using Java on Heroku, see these Dev Center articles:
-
-- [Java on Heroku](https://devcenter.heroku.com/categories/java)
+Technologies Used:
+- Spring Boot
+- HTML5
+- CSS
+- Java
+- JavaScript
